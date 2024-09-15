@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+    <header class="jumbotron jumbotron-fluid bg-primary text-white">
+        <div class="container">
+            <h1 class="display-4">Welcome to Amaral News!</h1>
+            <p class="lead">Your go-to source for the latest updates and insights.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="mb-4">About Us</h2>
+        <p>We are dedicated to bringing you the most accurate and timely news. Our team works around the clock to provide updates on current events, breaking news, and in-depth analysis on the stories that matter most.</p>
+        <p>Stay informed with our comprehensive coverage of global and local news. Check back frequently for the latest updates.</p>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="mb-4">What We Offer</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Breaking News</h5>
+                        <p class="card-text">Get instant updates on the latest breaking news from around the world.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">In-Depth Analysis</h5>
+                        <p class="card-text">Read detailed articles and expert opinions on current events and trending topics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Global Coverage</h5>
+                        <p class="card-text">Access news and updates from various regions, providing a well-rounded perspective on global affairs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

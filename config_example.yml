@@ -1,0 +1,13 @@
+# MongoDB Settings
+mongo:
+  username: <your-username>
+  password: <your-passowrd>
+  host: <host>
+  port: 27017
+  authSource: admin
+  authMechanism: DEFAULT
+  database: django-news
+  collection:
+    news: news
+    comments: comments
+    authentication: authentication
