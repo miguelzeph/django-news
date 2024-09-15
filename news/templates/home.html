@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
@@ -12,18 +11,16 @@
         </div>
     </header>
 
-    <!-- Bootstrap Carousel Section -->
     <section class="container mb-5">
         <div id="newsCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 {% for news in news_list %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-
-                        <!-- FIX IMAGE PATH -->
-                        <img src="{% static 'img/image_test.png' %}" class="d-block w-100" alt="{{ news.title }}">
+                        <img src="{% static news.image_url %}" class="d-block w-100 carousel-img" alt="{{ news.title }}">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{ news.title }}</h5>
-                            <p>{{ news.content|slice:":100" }}...</p>
+                            <!-- Display the first 100 characters of the first paragraph -->
+                            <p>{{ news.content.0|slice:":100" }}...</p>
                             <a href="/news/{{ news.slug }}/" class="btn btn-light">Read More</a>
                         </div>
                     </div>
@@ -46,10 +43,11 @@
             {% for news in news_list %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="{{ news.image_url }}" class="card-img-top" alt="{{ news.title }}">
+                        <img src="{% static news.image_url %}" class="card-img-top" alt="{{ news.title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ news.title }}</h5>
-                            <p class="card-text">{{ news.content|slice:":100" }}...</p>
+                            <!-- Display the first 100 characters of the first paragraph -->
+                            <p class="card-text">{{ news.content.0|slice:":100" }}...</p>
                             <a href="/news/{{ news.slug }}/" class="btn btn-primary">Read More</a>
                         </div>
                         <div class="card-footer text-muted">

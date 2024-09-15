@@ -1,24 +1,56 @@
-.news-post {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* Reset some basic styles for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.news-header h2 {
-    margin-bottom: 10px;
+/* Estilo para o cabeçalho da notícia */
+.news-header {
+    background-color: #004d40; /* Cor de fundo escura e elegante */
+    color: #ffffff; /* Texto branco */
+    padding: 2rem 1rem;
+    border-bottom: 1px solid #ffffff;
 }
 
-.news-image img {
-    max-width: 100%;
-    border-radius: 5px;
+.news-title {
+    font-size: 2.5rem; /* Tamanho maior para o título */
+    margin-bottom: 0.5rem;
 }
 
+.news-meta {
+    font-size: 1rem; /* Tamanho da fonte para o texto secundário */
+    font-weight: 300; /* Texto leve */
+    margin-bottom: 1rem; /* Espaço abaixo do texto */
+}
+
+/* Estilos para o conteúdo da notícia */
 .news-content {
-    line-height: 1.6;
+    margin-top: 2rem;
 }
 
-.news-footer p {
-    margin: 5px 0;
+.news-image {
+    max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Cantos arredondados para uma aparência mais suave */
+    margin-bottom: 1.5rem;
+}
+
+.news-body {
+    font-size: 1rem; /* Tamanho do texto principal */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    margin-bottom: 1.5rem; /* Espaço abaixo de cada parágrafo */
+}
+
+/* Estilo para as informações adicionais */
+.news-details {
+    font-size: 1rem; /* Tamanho do texto */
+}
+
+.news-detail {
+    margin-bottom: 0.75rem; /* Espaço abaixo de cada item */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
 }

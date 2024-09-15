@@ -1,0 +1,13 @@
+/* Estilo para ajustar a altura das imagens do carrossel */
+.carousel-img {
+    height: 300px; /* Defina a altura desejada para as imagens */
+    object-fit: cover; /* Mantém a proporção e recorta as bordas para cobrir o espaço */
+    width: 100%; /* Mantém a largura total */
+}
+
+/* Ajustes adicionais para o carrossel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+    padding: 20px;
+    border-radius: 10px;
+}

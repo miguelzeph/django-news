@@ -8,16 +8,19 @@ class News:
     def __init__(
         self,
         title:str,
-        content:str,
+        summary:str,
+        content:list,
         image_url:str,
         date_published:datetime,
         author:str,
         tags:list,
         category:str,
-        source:str
+        source:str,
+        views:int
         ):
         
         self.title = title
+        self.summary = summary
         self.content = content
         self.image_url = image_url
         self.date_published = date_published
@@ -25,11 +28,13 @@ class News:
         self.tags = tags
         self.category = category
         self.source = source
+        self.views = views
         
     def processing_news(self):
         
         self.news_document = {
             "title": self.title,
+            "summary":self.summary,
             "content": self.content,
             "slug": slugify(self.title),
             "image_url": self.image_url,
@@ -37,7 +42,8 @@ class News:
             "author": self.author,
             "tags": self.tags,
             "category": self.category,
-            "source": self.source
+            "source": self.source,
+            "views":self.views
             # language (AI can define)
         }
             

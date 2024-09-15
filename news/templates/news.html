@@ -1,48 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-{% block title %}Home Page{% endblock %}
+{% block title %}{{ news.title }}{% endblock %}
 
 {% block content %}
-    <header class="jumbotron jumbotron-fluid bg-primary text-white">
+    <header class="news-header">
         <div class="container">
-            <h1 class="display-4">Welcome to Amaral News!</h1>
-            <p class="lead">Your go-to source for the latest updates and insights.</p>
+            <h1 class="news-title">{{ news.title }}</h1>
+            <p class="news-meta">By {{ news.author }} on {{ news.date_published|date:"F j, Y" }}</p>
         </div>
     </header>
 
-    <section class="container my-5">
-        <h2 class="mb-4">About Us</h2>
-        <p>We are dedicated to bringing you the most accurate and timely news. Our team works around the clock to provide updates on current events, breaking news, and in-depth analysis on the stories that matter most.</p>
-        <p>Stay informed with our comprehensive coverage of global and local news. Check back frequently for the latest updates.</p>
-    </section>
-
-    <section class="container my-5">
-        <h2 class="mb-4">What We Offer</h2>
+    <section class="container news-content">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Breaking News</h5>
-                        <p class="card-text">Get instant updates on the latest breaking news from around the world.</p>
-                    </div>
-                </div>
+            <div class="col-md-8">
+                <!-- Display the main content of the news article -->
+                <img src="{% static news.image_url %}" class="news-image" alt="{{ news.title }}">
+                
+                {% for paragraph in news.content %}
+                    <p class="news-body">{{ paragraph }}</p>
+                {% endfor %}
+                
             </div>
             <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">In-Depth Analysis</h5>
-                        <p class="card-text">Read detailed articles and expert opinions on current events and trending topics.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Global Coverage</h5>
-                        <p class="card-text">Access news and updates from various regions, providing a well-rounded perspective on global affairs.</p>
-                    </div>
+                <!-- Additional content like tags, category, and source -->
+                <div class="news-details">
+                    <p class="news-detail"><strong>Category:</strong> {{ news.category }}</p>
+                    <p class="news-detail"><strong>Source:</strong> {{ news.source }}</p>
+                    <p class="news-detail"><strong>Tags:</strong> {{ news.tags|join:", " }}</p>
+                    <p class="news-detail"><strong>Views:</strong> {{ news.views }}</p>
                 </div>
             </div>
         </div>
