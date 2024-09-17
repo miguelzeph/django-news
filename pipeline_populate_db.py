@@ -28,9 +28,7 @@ if response.status_code == 200:
         summary = None,
         description = article["description"],
         # List of paragraphs (use single quotes, as some paragraphs have double quotes to repeat what was said)
-        content= [
-            article["content"]
-        ], # Web scraper this part
+        content= article["content"], # Web scraper this part
         image_storage_path = None ,# "img/image_test.png"
         image_url= article["urlToImage"],
         date_published= article["publishedAt"], #datetime.now(timezone.utc),
@@ -39,6 +37,7 @@ if response.status_code == 200:
         category= params["category"], # API info
         country = params["country"], # API info
         news_source=article.get("source",{}).get("name"),
+        url = article["url"],
         doc_source = "NewsAPI",
         views = 0
         )

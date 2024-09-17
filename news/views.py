@@ -19,11 +19,15 @@ def home_view(request):
             "$lte": end_date     # Data menor ou igual a 29 de fevereiro de 2024
         },
         # Filter Content
-        "content":{"$ne":None},
+        # "content":{"$ne":None},
+        "web_scrape":{"$exists":True}   
     }
     
-    # Get List News
-    news_list = list(collection_news.find(filter_parameters))
+    # Get first 21 List News
+    n = 21
+    news_list = list(
+        collection_news.find(filter_parameters).limit(n)
+        )
     
     return render(request, 'home.html', {"news_list":news_list})
 

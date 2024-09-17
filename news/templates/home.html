@@ -27,7 +27,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ news.title }}</h5>
                         <!-- Display the first 100 characters of the first paragraph -->
-                        <p>{{ news.content.0|slice:":100" }}...</p>
+                        <p>{{ news.content|slice:":100" }}...</p>
                         <a href="/news/{{ news.slug }}/" class="btn btn-light">Read More</a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ news.title|slice:":80" }}...</h5>
                         <!-- Display the first 100 characters of the first paragraph -->
-                        <p class="card-text">{{ news.content.0|slice:":100" }}...</p>
+                        <p class="card-text">{{ news.content|slice:":100" }}...</p>
                         <a href="/news/{{ news.slug }}/" class="btn btn-outline-dark">Read More</a>
                     </div>
                     <div class="card-footer text-muted">

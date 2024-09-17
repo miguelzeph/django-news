@@ -8,5 +8,6 @@ pymongo ==3.12.3
 klein_config==4.0.2
 klein_mongo==3.0.0
 
-# Pipeline
+# API (pipeline) & Scrape
 requests==2.32.3
+beautifulsoup4==4.12.3

@@ -20,6 +20,7 @@ class News:
         category:str,
         country:str,
         news_source:str,
+        url:str,
         doc_source:str,
         views:int
         ):
@@ -36,6 +37,7 @@ class News:
         self.category = category
         self.country = country
         self.news_source = news_source
+        self.url = url
         self.doc_source = doc_source
         self.views = views
         
@@ -56,6 +58,7 @@ class News:
             "category": self.category,
             "country": self.country,
             "news_source": self.news_source,
+            "url": self.url,
             "doc_source": self.doc_source,
             "views":self.views,
             # language (AI can define)
