@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from datetime import datetime
 from mongo.mongo_settings import collection_news
+from news.utils import clean_title
 
 class News:
     
@@ -9,48 +10,65 @@ class News:
         self,
         title:str,
         summary:str,
+        description:str,
         content:list,
+        image_storage_path:str,
         image_url:str,
         date_published:datetime,
         author:str,
         tags:list,
         category:str,
-        source:str,
+        country:str,
+        news_source:str,
+        doc_source:str,
         views:int
         ):
         
         self.title = title
         self.summary = summary
+        self.description = description
         self.content = content
+        self.image_storage_path= image_storage_path
         self.image_url = image_url
         self.date_published = date_published
         self.author = author
         self.tags = tags
         self.category = category
-        self.source = source
+        self.country = country
+        self.news_source = news_source
+        self.doc_source = doc_source
         self.views = views
         
     def processing_news(self):
         
         self.news_document = {
-            "title": self.title,
+            "raw_title": self.title,
+            "title": clean_title(self.title), # remove " - " source... 
             "summary":self.summary,
+            "description": self.description,
             "content": self.content,
-            "slug": slugify(self.title),
+            "slug": slugify(self.title), # Use the "raw title"
+            "image_storage_path": self.image_storage_path,
             "image_url": self.image_url,
-            "date_published": self.date_published,
+            "date_published": datetime.strptime(self.date_published, "%Y-%m-%dT%H:%M:%SZ"),
             "author": self.author,
             "tags": self.tags,
             "category": self.category,
-            "source": self.source,
-            "views":self.views
+            "country": self.country,
+            "news_source": self.news_source,
+            "doc_source": self.doc_source,
+            "views":self.views,
             # language (AI can define)
         }
-            
-    def save_to_db(self):
+    
+    def check_document_in_db(self) -> None:
         
-        # Process Data
-        self.processing_news()
+        if collection_news.find_one(
+                {"slug": self.news_document["slug"]} #slugify(self.title)
+            ):
+            return True
+            
+    def save_to_db(self) -> None:
         
         # Save    
         collection_news.insert_one(self.news_document)

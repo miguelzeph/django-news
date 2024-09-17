@@ -7,3 +7,8 @@ def increment_news(slug:str) -> None:
         {"slug": slug},
         {"$inc": {"views": 1}}
     )
+    
+def clean_title(title:str) -> str:
+    parts = title.split(' - ')
+    
+    return parts[0]

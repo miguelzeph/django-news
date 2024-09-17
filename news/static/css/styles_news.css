@@ -10,9 +10,9 @@ body {
 
 /* Estilo para o cabeçalho da notícia */
 .news-header {
-    background-color: #004d40; /* Cor de fundo escura e elegante */
+    background-color: #3f6660; /* Cor de fundo escura e elegante */
     color: #ffffff; /* Texto branco */
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     border-bottom: 1px solid #ffffff;
 }
 
@@ -45,12 +45,34 @@ body {
     margin-bottom: 1.5rem; /* Espaço abaixo de cada parágrafo */
 }
 
-/* Estilo para as informações adicionais */
+
+
+/* -------------------  Details (below the news title) ------------------------  */
+/* Estilo para o bloco de informações adicionais */
 .news-details {
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto, para boa legibilidade */
+    font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
+    line-height: 1.6; /* Altura da linha para melhorar a legibilidade */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
 }
 
+/* Estilo para cada item de informação */
 .news-detail {
-    margin-bottom: 0.75rem; /* Espaço abaixo de cada item */
-    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    margin-right: 15px; /* Espaço à direita entre os itens */
+    color: #555; /* Cor do texto dos detalhes */
+    font-family: 'Georgia', serif; /* Fonte serifada para um toque mais elegante */
+}
+
+/* Adiciona uma BORDA (barra) à direita dos itens */
+.news-detail:not(:last-child)::after {
+    content: '|'; /* Separador visual */
+    margin-left: 15px; /* Espaço entre o item e o separador */
+    color: #999; /* Cor do separador */
+}
+
+/* Estilo para os textos em negrito dentro dos detalhes */
+.news-detail strong {
+    color: #222; /* Cor mais escura para o texto em negrito */
 }

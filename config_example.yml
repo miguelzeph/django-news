@@ -11,3 +11,8 @@ mongo:
     news: news
     comments: comments
     authentication: authentication
+
+# News API Settings
+newsapi:
+  key: <your-API>
+  url: 'https://newsapi.org/v2/top-headlines'

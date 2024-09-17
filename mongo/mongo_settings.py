@@ -1,9 +1,6 @@
-from klein_config import get_config
 from klein_mongo import get_client
+from global_config import config
 
-
-# export KLEIN_CONFIG=./your-config-path/config.yml
-config = get_config()
 
 # Constants
 MONGO_HOST = config.get("mongo.host")

@@ -1,6 +1,12 @@
+# Backend
 django ==5.1.1
 pymongo ==3.12.3
-# djongo ==1.2.31 # MongoDB
+# djongo ==1.2.31 # not working
 # pytz
+
+# Configuration
 klein_config==4.0.2
 klein_mongo==3.0.0
+
+# Pipeline
+requests==2.32.3

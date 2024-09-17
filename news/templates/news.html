@@ -4,32 +4,45 @@
 {% block title %}{{ news.title }}{% endblock %}
 
 {% block content %}
-    <header class="news-header">
+    <!-- <header class="news-header"> -->
+    <header class="">
         <div class="container">
             <h1 class="news-title">{{ news.title }}</h1>
             <p class="news-meta">By {{ news.author }} on {{ news.date_published|date:"F j, Y" }}</p>
+
+            <p class="news-details">
+                <span class="news-detail"><strong>Category:</strong> {{ news.category }}</span>
+                {% if news.news_source %}
+                <span class="news-detail"><strong>Source:</strong> {{ news.news_source }}</span>
+                {% endif %}
+                {% if news.tags %}
+                <span class="news-detail"><strong>Tags:</strong> {{ news.tags|join:", " }}</span>
+                {% endif %}
+                <span class="news-detail"><strong>Views:</strong> {{ news.views }}</span>
+            </p>
         </div>
     </header>
 
     <section class="container news-content">
         <div class="row">
-            <div class="col-md-8">
-                <!-- Display the main content of the news article -->
-                <img src="{% static news.image_url %}" class="news-image" alt="{{ news.title }}">
-                
-                {% for paragraph in news.content %}
-                    <p class="news-body">{{ paragraph }}</p>
-                {% endfor %}
-                
-            </div>
-            <div class="col-md-4">
-                <!-- Additional content like tags, category, and source -->
-                <div class="news-details">
-                    <p class="news-detail"><strong>Category:</strong> {{ news.category }}</p>
-                    <p class="news-detail"><strong>Source:</strong> {{ news.source }}</p>
-                    <p class="news-detail"><strong>Tags:</strong> {{ news.tags|join:", " }}</p>
-                    <p class="news-detail"><strong>Views:</strong> {{ news.views }}</p>
+            <!-- Colocar a imagem em uma div separada -->
+            <div class="col-12">
+                <div class="news-image-wrapper text-center">
+                    <!-- Imagem principal do artigo -->
+                    <img src="{{news.image_url}}" class="news-image" alt="{{ news.title }}">
+                    <!-- <img src="{% static news.image_url %}" class="news-image" alt="{{ news.title }}"> -->
                 </div>
+            </div>
+            
+            <!-- Conteúdo do artigo e informações adicionais -->
+            <div class="col-12">
+                <!-- Exibe o conteúdo principal da notícia -->
+                <div class="news-body-content">
+                    {% for paragraph in news.content %}
+                        <p class="news-body">{{ paragraph }}</p>
+                    {% endfor %}
+                </div>
+
             </div>
         </div>
     </section>
