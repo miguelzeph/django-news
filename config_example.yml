@@ -16,3 +16,7 @@ mongo:
 newsapi:
   key: <your-API>
   url: 'https://newsapi.org/v2/top-headlines'
+
+browser_driver:
+  path: web_scraper/driver_Chromium/chromedriver
+  url_summarizer: https://www.zerogpt.com/summarizer

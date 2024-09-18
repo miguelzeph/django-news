@@ -11,3 +11,4 @@ klein_mongo==3.0.0
 # API (pipeline) & Scrape
 requests==2.32.3
 beautifulsoup4==4.12.3
+selenium

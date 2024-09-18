@@ -1,54 +1,33 @@
 body {
     font-family: 'Roboto', sans-serif;
-}
-/* Reset some basic styles for a clean slate */
-* {
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f9f9f9; /* Fundo leve para melhor contraste */
+    color: #333;
 }
 
-/* Estilo para o cabeçalho da notícia */
+/* Cabeçalho da notícia */
 .news-header {
-    background-color: #3f6660; /* Cor de fundo escura e elegante */
-    color: #ffffff; /* Texto branco */
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #ffffff;
+    background-color: #3f6660;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 4px solid #ffffff;
 }
 
 .news-title {
-    font-size: 2.5rem; /* Tamanho maior para o título */
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 .news-meta {
-    font-size: 1rem; /* Tamanho da fonte para o texto secundário */
-    font-weight: 300; /* Texto leve */
-    margin-bottom: 1rem; /* Espaço abaixo do texto */
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
 }
 
-/* Estilos para o conteúdo da notícia */
-.news-content {
-    margin-top: 2rem;
-}
-
-.news-image {
-    max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 8px; /* Cantos arredondados para uma aparência mais suave */
-    margin-bottom: 1.5rem;
-}
-
-.news-body {
-    font-size: 1rem; /* Tamanho do texto principal */
-    line-height: 1.6; /* Altura da linha para melhor legibilidade */
-    margin-bottom: 1.5rem; /* Espaço abaixo de cada parágrafo */
-}
-
-
-
-/* -------------------  Details (below the news title) ------------------------  */
-/* Estilo para o bloco de informações adicionais */
+/* Seção de detalhes */
 .news-details {
     font-size: 1rem; /* Tamanho da fonte */
     color: #333; /* Cor do texto, para boa legibilidade */
@@ -58,21 +37,76 @@ body {
     padding: 0; /* Remove o padding padrão */
 }
 
-/* Estilo para cada item de informação */
 .news-detail {
-    margin-right: 15px; /* Espaço à direita entre os itens */
-    color: #555; /* Cor do texto dos detalhes */
-    font-family: 'Georgia', serif; /* Fonte serifada para um toque mais elegante */
+    margin-right: 10px;
+    font-family: 'Georgia', serif;
+    color: #555;
 }
 
-/* Adiciona uma BORDA (barra) à direita dos itens */
-.news-detail:not(:last-child)::after {
-    content: '|'; /* Separador visual */
-    margin-left: 15px; /* Espaço entre o item e o separador */
-    color: #999; /* Cor do separador */
+.news-detail a {
+    color: #0066cc;
+    text-decoration: none;
 }
 
-/* Estilo para os textos em negrito dentro dos detalhes */
-.news-detail strong {
-    color: #222; /* Cor mais escura para o texto em negrito */
+.news-detail a:hover {
+    text-decoration: underline;
+}
+
+/* Imagem */
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Texto da notícia */
+.news-body {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: #444;
+}
+
+/* Ajuste para a seção de resumo */
+.news-summary h3, .news-full-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #3f6660;
+}
+
+.news-summary p {
+    background-color: #eef7f5;
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+/* Estilo adicional para textos e links */
+.news-full-text p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: #3f6660;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Melhorar a responsividade */
+@media (max-width: 768px) {
+    .news-title {
+        font-size: 2rem;
+    }
+    
+    .news-summary h3, .news-full-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .news-detail {
+        margin-right: 10px;
+    }
 }

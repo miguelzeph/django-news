@@ -27,23 +27,24 @@
 
     <section class="container news-content">
         <div class="row">
-            <!-- Colocar a imagem em uma div separada -->
             <div class="col-12">
                 <div class="news-image-wrapper text-center">
-                    <!-- Imagem principal do artigo -->
-                    <img src="{{news.image_url}}" class="news-image" alt="{{ news.title }}">
-                    <!-- <img src="{% static news.image_url %}" class="news-image" alt="{{ news.title }}"> -->
+                    <img src="{{ news.image_url }}" class="news-image" alt="Image illustrating the article {{ news.title }}">
                 </div>
             </div>
-            
-            <!-- Conteúdo do artigo e informações adicionais -->
+
             <div class="col-12">
-                <!-- Exibe o conteúdo principal da notícia -->
-                <div>
+                <section class="news-summary">
+                    <h3>Summary</h3>
+                    <p>{{ news.AI.summary }}</p>
+                </section>
+                
+                <section class="news-full-text">
+                    <h3>Full Text</h3>
                     {% for paragraph in news.web_scrape.content %}
                         <p class="news-body">{{ paragraph }}</p>
                     {% endfor %}
-                </div>
+                </section>
             </div>
         </div>
     </section>

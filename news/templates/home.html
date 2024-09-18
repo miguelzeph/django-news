@@ -6,19 +6,19 @@
 {% block content %}
 <header class="bg-light text-center py-5 mb-4 border-bottom">
     <div class="container">
-        <h1 class="display-4 mb-3">Welcome to Amaral News!</h1>
-        <p class="lead mb-4">
-            Amaral News is your premier destination for real-time updates and comprehensive coverage across a wide range of topics. Our mission is to keep you informed with the latest news and insights from around the globe.
+        <h1 class="display-4 mb-3">Welcome to <strong>MinuteNews</strong>!</h1>
+        <p class="lead mb-2">
+            <strong>MinuteNews</strong> is your go-to source for <strong>rapid updates</strong> and <strong>concise coverage</strong> on the most relevant topics. Our goal is to keep you informed with <strong>bite-sized news summaries</strong>, perfect for <strong>staying updated on the go</strong>.
         </p>
         <p class="text-muted mb-4">
-            Established to deliver accurate and timely information, Amaral News brings you breaking news, in-depth reports, and expert analysis. From the latest global events to local stories that matter, we cover:
+            Built to deliver <strong>quick</strong>, <strong>accurate</strong>, and <strong>no-nonsense news</strong>, <strong>MinuteNews</strong> brings you <strong>fast-breaking updates</strong>, <strong>brief reports</strong>, and <strong>key insights</strong>. From top <strong>global headlines</strong> to the <strong>stories that matter locally</strong>, we’ve got you covered in a <strong>flash</strong>:
         </p>
     </div>
 </header>
 
 <section class="container mb-5">
     <h3 class="section-title mb-4">In the Spotlight</h3>
-    <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+    <div id="newsCarousel" class="carousel slide" data-ride="carousel" data-interval="2300">
         <div class="carousel-inner">
             {% for news in news_list %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">

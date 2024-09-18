@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from news.models import News
 from global_config import config
 import requests
@@ -57,10 +56,3 @@ if response.status_code == 200:
 
 else:
     print(f"Erro to find the news: {response.status_code}")
-
-
-
-
-
-
-# Verificando se a requisição foi bem-sucedida
