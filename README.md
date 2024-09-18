@@ -1,5 +1,8 @@
 # Django News
 
+![DjangoNews](./minutenews.png)
+
+
 Welcome to Django News! This project demonstrates how to use Django to build a news website efficiently. It automates the process of updating news content and allows you to manage everything from your local machine by simply deploying the Django site and updating the database.
 
 ## Dependencies
