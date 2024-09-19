@@ -10,8 +10,9 @@ venv.bak/
 # Volume
 data/
 
-# Python Bytecode
-*.pyc
 
 # Python cache files
 __pycache__/
+*.pyc
+*.pyo
+*.pyd

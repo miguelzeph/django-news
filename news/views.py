@@ -23,8 +23,8 @@ def home_view(request):
         "web_scrape":{"$exists":True}   
     }
     
-    # Get first 21 List News
-    n = 21
+    # Get first n News
+    n = 100
     news_list = list(
         collection_news.find(filter_parameters).limit(n)
         )

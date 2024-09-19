@@ -1,8 +1,7 @@
 # Backend
 django ==5.1.1
 pymongo ==3.12.3
-# djongo ==1.2.31 # not working
-# pytz
+gunicorn==23.0.0
 
 # Configuration
 klein_config==4.0.2
